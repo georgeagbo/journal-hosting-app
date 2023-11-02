@@ -1,0 +1,19 @@
+Run the following SQL commands in the SQLite shell:
+
+    ```sql
+    -- Example SQL commands to create tables
+    -- Modify based on your actual database structure
+
+    CREATE TABLE users (
+        id INTEGER PRIMARY KEY,
+        username TEXT NOT NULL,
+        password TEXT NOT NULL
+    );
+
+    CREATE TABLE journals (
+        id INTEGER PRIMARY KEY,
+        user_id INTEGER,
+        name TEXT NOT NULL,
+        privacy TEXT NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES users(id)
+    );
